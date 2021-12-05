@@ -1,0 +1,38 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "art-talks",
+  "main": "server.js",
+  "scripts": {
+    "start": "npm run build && node dist-server/server.js",
+    "build": "npm-run-all clean transpile",
+    "server": "node dist-server/server.js",
+    "transpile": "babel ./server --out-dir dist-server",
+    "clean": "rimraf dist-server",
+    "watch:dev": "nodemon",
+    "dev":"npm-run-all build server"
+  },
+  "author": "Gal Zisin",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.6",
+    "nodemon": "^2.0.15",
+    "rimraf": "^3.0.2",
+    "socket.io": "^4.4.0"
+  },
+  "nodemonConfig": {
+    "exec": "npm run dev",
+    "watch": [
+      "server/*",
+      "client/*"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "npm-run-all": "^4.1.5"
+  }
+}

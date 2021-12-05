@@ -1,0 +1,207 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.App {
+  text-align: center;
+}
+.cards-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 480px);
+  gap: 3rem;
+  /* align-items: stretch; */
+  place-content: center;
+  margin-bottom: 2rem;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 20px #e1e5ee;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 200ms ease-in;
+}
+.card:hover {
+  transform: scale(1.1);
+}
+.card img {
+  height: 20rem;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.card-title {
+  padding: 1rem;
+  text-align: left;
+}
+.card-artistname {
+  padding: 0 1rem;
+  text-align: left;
+}
+.card-description {
+  padding: 0.5rem 1rem 3rem 1rem;
+  text-align: left;
+}
+.search-box {
+  outline: none;
+  min-width: 98%;
+  border: 1px solid grey;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 2.5rem;
+}
+.searchBox {
+  width: 98%;
+  height: 50px;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin: 2.5rem;
+}
+.searchBox > i {
+  font-size: 20px;
+
+  color: #777;
+}
+.searchBox > input {
+  flex: 1;
+  height: 40px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding-left: 10px;
+}
+.card-link,
+.card-link:hover,
+.card-link:focus,
+.card-link:active {
+  text-decoration: none;
+  color: inherit;
+}
+.card-header {
+  display: flex;
+  text-align: left;
+}
+.picture-discussion-container {
+  margin: 5rem;
+}
+.picture-discussion-header {
+  display: flex;
+  flex-direction: row;
+}
+.picture-discussion-header h2 {
+  font-size: 50px;
+  align-self: flex-end;
+}
+.picture-discussion-header h3 {
+  font-size: 16px;
+  align-self: flex-end;
+  margin-left: 20px;
+  margin-bottom: 8px;
+}
+.picture-discussion-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1 10px;
+}
+.picture-discussion-image {
+  width: 100px;
+  height: 600px;
+  justify-self: flex-start;
+  /* border: 0px bold #000; */
+}
+
+/* .picture-discussion-chat {
+  min-width: 650px;
+  border-style: solid;
+  background-color: #f6f9f6;
+  border-width: 3px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  padding-right: 20px;
+  padding-left: 15px;
+  border-radius: 15px;
+}
+.picture-discussion-chat input {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+} */
+
+.logIn {
+  width: 600px;
+  height: 350px;
+  border: 5px solid #0091ff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logIn input {
+  margin: 10px;
+  width: 200px;
+  height: 40px;
+  border: 2px solid #0091ff;
+  /* background-color: transparent; */
+  padding-left: 10px;
+  /* color: white; */
+  font-size: 15px;
+}
+
+#You {
+  justify-content: flex-start;
+}
+
+#Other {
+  justify-content: flex-end;
+}
+
+#Other .messageIndividual {
+  background-color: #5ff064;
+  color: black;
+}
+
+.messageIndividual {
+  width: 200px;
+  height: 60px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background-color: #0091ff;
+  opacity: 0.9;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+.picture-discussion-chat {
+  width: 600px;
+  height: 650px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.picture-discussion-chat .messages {
+  flex: 80%;
+  width: 100%;
+  padding-left: 20px;
+}
