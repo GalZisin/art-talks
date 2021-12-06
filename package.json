@@ -10,7 +10,7 @@
     "transpile": "babel ./server --out-dir dist-server",
     "clean": "rimraf dist-server",
     "watch:dev": "nodemon",
-    "dev":"npm-run-all build server"
+    "dev": "npm-run-all build server"
   },
   "author": "Gal Zisin",
   "license": "ISC",
@@ -20,7 +20,8 @@
     "node-fetch": "^2.6.6",
     "nodemon": "^2.0.15",
     "rimraf": "^3.0.2",
-    "socket.io": "^4.4.0"
+    "socket.io": "^4.4.0",
+    "typescript": "^4.5.2"
   },
   "nodemonConfig": {
     "exec": "npm run dev",

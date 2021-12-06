@@ -5,12 +5,21 @@ import Gallery from "./components/gallery";
 import PictureDiscussion from "./components/pictureDiscussion";
 import { useDispatch, useSelector } from "react-redux";
 import { getCards } from "./redux/actions/cardsAction";
+import { RootState } from './redux/store'
+import axios from "axios";
+// import {
+//   CARDS_REQUEST,
+//   CARDS_SUCCESS,
+//   CARDS_FAIL,
+// } from "./redux/constants/cardsConstants";
+const baseUrl = "http://localhost:3003";
+
 // const baseUrl = "http://localhost:3003";
-export const GalleryDataContext = createContext();
+export const GalleryDataContext = createContext([]);
 
 function App() {
-  const [gallaryCards, setGallaryCards] = useState([]);
-  const { cards } = useSelector((state) => state.cards);
+  // const [gallaryCards, setGallaryCards] = useState([]);
+  // const { cards } = useSelector((state: RootState) => state.cards);
   const dispatch = useDispatch();
 
   // const getData = async () => {
@@ -26,33 +35,32 @@ function App() {
   //     console.log(error);
   //   }
   // };
-
+  const [allCards, setAllCards] = useState([]);
   useEffect(() => {
-    let active = true;
-    dispatch(getCards());
-    if (cards) {
-      setGallaryCards(cards);
-    }
-    // const cards = getData();
-    // console.log(cards);
-    // if (cards) {
-    //   setGallaryCards(cards);
-    // }
-    return () => {
-      active = false;
-    };
+    // (async () => {
+    //   let gallaryData;
+    //   gallaryData = await axios.post(baseUrl + `/`);
+    //   gallaryData = JSON.parse(gallaryData.data.data)
+    //   console.log("allCards", gallaryData)
+    //   dispatch({
+    //     type: CARDS_SUCCESS,
+    //     payload: JSON.parse(gallaryData),
+    //   });
+    //   setAllCards(gallaryData);
+    //   // setCardsGallery(gallaryData);
+    // })()
+
   }, []);
 
   return (
     <div className="App">
-      {/* <GalleryDataContext.Provider value={cards}> */}
+      {/* <GalleryDataContext.Provider value={allCards}> */}
       <Router>
         <Routes>
-          <Route path="/" element={<Gallery />} exact />
+          <Route path="/" element={<Gallery />} />
           <Route
             path="/picture-discussion/:id"
             element={<PictureDiscussion />}
-            exact
           />
         </Routes>
       </Router>

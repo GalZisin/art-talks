@@ -4,8 +4,8 @@ import {
   CARDS_FAIL,
   CLEAR_ERRORS,
 } from "../constants/cardsConstants";
-
-export const cardsReducer = (state = { cards: [] }, action) => {
+import { IAction, IState } from "../../types/types";
+export const cardsReducer = (state: IState = { cards: [] }, action: IAction) => {
   switch (action.type) {
     case CARDS_REQUEST:
       return {

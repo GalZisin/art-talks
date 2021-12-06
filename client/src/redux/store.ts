@@ -15,4 +15,6 @@ const store = createStore(
   composeWithDevTools(applyMiddleware(...middlware))
 );
 
+export type RootState = ReturnType<typeof store.getState>
+
 export default store;

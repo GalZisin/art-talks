@@ -4,9 +4,10 @@ import {
   CARDS_SUCCESS,
   CARDS_FAIL,
 } from "../constants/cardsConstants";
+import { AppDispatch } from "../../types/types";
 const baseUrl = "http://localhost:3003";
 
-export const getCards = () => async (dispatch) => {
+export const getCards = () => async (dispatch: AppDispatch) => {
   try {
     dispatch({ type: CARDS_REQUEST });
 
@@ -16,7 +17,8 @@ export const getCards = () => async (dispatch) => {
       type: CARDS_SUCCESS,
       payload: JSON.parse(gallaryCards.data.data),
     });
-  } catch (error) {
+    return JSON.parse(gallaryCards.data.data)
+  } catch (error: any) {
     dispatch({
       type: CARDS_FAIL,
       payload: error.response.data.message,
